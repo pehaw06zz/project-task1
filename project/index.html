@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <header>
+    <div class="content">
+      <div class="logo_box">
+        
+        <!-- <img src="https://img.freepik.com/premium-vector/instagram-vector-logo-icon-social-media-logotype_901408-392.jpg?semt=ais_hybrid&w=740" alt="Logo" /> -->
+        <span>📒 Tài Chính Cá Nhân K24_Rikkei</span>
+      </div>
+      <div class="user_box">
+        <select onchange="window.location.href=this.value">
+          <option value="">Tài khoản</option>
+          <option value="authen">Đăng nhập</option>
+          <option value="authen">Đăng xuất</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="home_container">
+    <div class="banner">
+      <h2>Kiểm soát chỉ tiêu thông minh</h2>
+      <p>Theo dõi ngân sách và thu chi hàng tháng dễ dàng</p>
+    </div>
+
+    <div class="content_container1">
+      <h1 style="color: #4338CA;">Quản Lý Tài Chính Cá Nhân</h1>
+
+      <div class="content_center">
+        <span>Chọn tháng</span>
+        <input type="month" id="month" name="month" value="2023-10" />
+      </div>
+
+      <form class="content_center">
+        <span>Ngân sách tháng</span>
+        
+        <input type="text" id="budget" name="budget" placeholder="VD: 10000000" required/>
+        <button class="btn btn-primary" id="addBudget">Lưu</button>
+      </form>
+
+      <div class="content_center">
+        <span>Số tiền còn lại</span>
+        <h4 id="remainingBudget" style="color: greenyellow;">0 VND</h4>
+      </div>
+
+      <div class="content_left">
+        <h4>💼 Quản lý danh mục (theo tháng)</h4>
+        <div class="form">
+          <input id="tenDanhMuc" type="text" placeholder="Tên danh mục" class="widthform2"/>
+          <input id="gioiHan" type="number" placeholder="Giới hạn (VND)" class="widthform2"/>
+          <button id ="btnThemDanhMuc" onclick="themDanhMuc()">Thêm danh mục</button>
+        </div>
+        <ul id="danhSachqldm" class="listqldm"></ul>
+      </div>
+
+      <div class="content_chitieu">
+        <input id="soTien" type="number" placeholder="Số tiền (VND)" class ="widthform"/>
+        <input id="tenChiTieu" type="text" value="Tiền chi tiêu" class ="widthform"/>
+        <input id="ghiChu" type="text" placeholder="Ghi chú" class ="widthform"/>
+        <button style="background-color: #4338CA; color: white;" onclick="themChiTieu()" class ="widthform">Thêm</button>
+      </div>
+
+      <div class="content_left">
+        <h4 style="color: red;">Lịch sử giao dịch</h4>
+        <div class="history_form">
+          <input id="search" type="text" placeholder="Tìm nội dung" class="widthhistory"/>
+          <button style="background-color: blue;" onclick="timKiem()" class="widthhistory">Tìm</button>
+          <button onclick="sapXepTheoGia()" class="widthhistory">Sắp xếp theo giá</button>
+        </div>
+        <ul id="danhSachHistory" class="listHistory"></ul>
+
+        <nav aria-label="...">
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="content_left">
+        <p style="color: red;">Danh mục "tiền ăn" đã vượt giới hạn: 1,060,000 / 10,000,000 VND</p>
+      </div>
+
+   
+    </div>
+    <div class="content_container2">
+        <h4>Thống kê chi tiêu các tháng</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Tháng</th>
+              <th scope="col">Chi tiêu</th>
+              <th scope="col">Ngân sách</th>
+              <th scope="col">Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Các dòng dữ liệu sẽ thêm ở đây -->
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+  <footer>
+    <span>&copy; 2025 Quản lý tài chính cá nhân by Tấn Hão !</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
